@@ -179,6 +179,7 @@ impl<'a> Lexer<'a> {
 /// # Example
 ///
 /// ```rust
+/// extern crate serenity;
 /// use serenity::framework::standard::Args;
 ///
 /// let mut args = Args::new("hello world!", &[" ".to_string()]); // A space is our delimiter.
@@ -193,6 +194,7 @@ impl<'a> Lexer<'a> {
 /// We can also parse "quoted arguments" (no pun intended):
 ///
 /// ```rust
+/// extern crate serenity;
 /// use serenity::framework::standard::Args;
 ///
 /// // Let us imagine this scenario:
@@ -209,6 +211,7 @@ impl<'a> Lexer<'a> {
 /// In case of a mistake, we can go back in time... er I mean, one step (or entirely):
 ///
 /// ```rust
+/// extern crate serenity;
 /// use serenity::framework::standard::Args;
 ///
 /// let mut args = Args::new("4 2", &[" ".to_string()]);
@@ -241,6 +244,7 @@ impl<'a> Lexer<'a> {
 /// Is there a more sensible solution than rewinding...? Actually, there is! The `*_n` methods:
 ///
 /// ```rust
+/// extern crate serenity;
 /// use serenity::framework::standard::Args;
 ///
 /// let mut args = Args::new("trois cinq quatre six", &[" ".to_string()]);
@@ -274,6 +278,7 @@ impl Args {
     /// # Example
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new(
@@ -334,6 +339,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("4 2", &[" ".to_string()]);
@@ -353,6 +359,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("4 2", &[" ".to_string()]);
@@ -380,6 +387,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let args = Args::new("4 2", &[" ".to_string()]);
@@ -405,6 +413,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("4 2", &[" ".to_string()]);
@@ -425,6 +434,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("man of culture topknot", &[" ".to_string()]);
@@ -456,6 +466,7 @@ impl Args {
     /// Assert that all of the numbers in the message are even.
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("4 2", &[" ".to_string()]);
@@ -479,6 +490,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let args = Args::new("4 2", &[" ".to_string()]);
@@ -504,6 +516,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("4 \"2\"", &[" ".to_string()]);
@@ -523,6 +536,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new(r#""4 2""#, &[" ".to_string()]);
@@ -553,6 +567,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new(r#""4 2""#, &[" ".to_string()]);
@@ -582,6 +597,7 @@ impl Args {
     /// Assert that all of the numbers in quotations in the message are odd.
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new(r#""5" "3""#, &[" ".to_string()]);
@@ -606,6 +622,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new(r#""4" "2""#, &[" ".to_string()]);
@@ -634,6 +651,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("c4 2", &[" ".to_string()]);
@@ -665,6 +683,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("c4 2", &[" ".to_string()]);
@@ -697,6 +716,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let args = Args::new("42 69", &[" ".to_string()]);
@@ -713,6 +733,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let args = Args::new("\"42 69\"", &[" ".to_string()]);
@@ -721,6 +742,7 @@ impl Args {
     /// ```
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let args = Args::new("\"42 69", &[" ".to_string()]);
@@ -729,6 +751,7 @@ impl Args {
     /// ```
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let args = Args::new("42 69\"", &[" ".to_string()]);
@@ -757,6 +780,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("to tre fire", &[" ".to_string()]);
@@ -798,6 +822,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("4 2", &[" ".to_string()]);
@@ -815,6 +840,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("", &[" ".to_string()]);
@@ -831,6 +857,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("2 4", &[" ".to_string()]);
@@ -855,6 +882,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("4 2", &[" ".to_string()]);
@@ -875,6 +903,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("4 2", &[" ".to_string()]);
@@ -901,6 +930,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new("42 420 69", &[" ".to_string()]);
@@ -930,6 +960,7 @@ impl Args {
     /// # Examples
     ///
     /// ```rust
+    /// extern crate serenity;
     /// use serenity::framework::standard::Args;
     ///
     /// let mut args = Args::new(r#""42" "69""#, &[" ".to_string()]);

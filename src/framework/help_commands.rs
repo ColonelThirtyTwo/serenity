@@ -696,6 +696,7 @@ fn send_error_embed(channel_id: ChannelId, input: &str, colour: Colour) -> Resul
 /// Use the command with `exec_help`:
 ///
 /// ```rust,no_run
+/// extern crate serenity;
 /// # use serenity::prelude::*;
 /// # struct Handler;
 /// #
@@ -805,6 +806,7 @@ fn single_command_to_plain_string(help_options: &HelpOptions, command: &Command)
 /// Use the command with `exec_help`:
 ///
 /// ```rust,no_run
+/// extern crate serenity;
 /// # use serenity::prelude::*;
 /// # struct Handler;
 /// #

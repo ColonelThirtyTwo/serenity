@@ -23,6 +23,7 @@ use super::command::PrefixCheck;
 /// Responding to mentions and setting a command prefix of `"~"`:
 ///
 /// ```rust,no_run
+/// extern crate serenity;
 /// # use serenity::prelude::EventHandler;
 /// struct Handler;
 ///
@@ -110,6 +111,7 @@ impl Configuration {
     /// Create a HashSet in-place:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -136,6 +138,7 @@ impl Configuration {
     /// Create a HashSet in-place:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -164,6 +167,7 @@ impl Configuration {
     /// Create a HashSet in-place:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -207,6 +211,7 @@ impl Configuration {
     /// Ignore a set of commands, assuming they exist:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -243,6 +248,7 @@ impl Configuration {
     /// otherwise return a prefix of `"~"`.
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -337,6 +343,7 @@ impl Configuration {
     /// Create a HashSet in-place:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -352,6 +359,7 @@ impl Configuration {
     /// Create a HashSet beforehand:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -383,6 +391,7 @@ impl Configuration {
     /// Assign a basic prefix:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -410,6 +419,7 @@ impl Configuration {
     /// Assign a set of prefixes the bot can respond to:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -451,6 +461,7 @@ impl Configuration {
     /// Have the args be seperated by a comma and a space:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -478,6 +489,7 @@ impl Configuration {
     /// Have the args be seperated by a comma and a space; and a regular space:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #

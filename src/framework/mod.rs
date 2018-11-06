@@ -68,6 +68,7 @@ use serenity::model::channel::Channel;
 /// Create a regular `ping` command which takes no arguments:
 ///
 /// ```rust,ignore
+/// extern crate serenity;
 /// command!(ping(_context, message) {
 ///     if let Err(why) = message.reply("Pong!") {
 ///         println!("Error sending pong: {:?}", why);
@@ -79,6 +80,7 @@ use serenity::model::channel::Channel;
 /// them, sending the product as a reply:
 ///
 /// ```rust,ignore
+/// extern crate serenity;
 /// command!(multiply(_context, message, args) {
 ///     let first = args.single::<f64>().unwrap();
 ///     let second = args.single::<f64>().unwrap();
@@ -252,6 +254,7 @@ impl StandardFramework {
     /// [allowing whitespace], and setting the [`prefix`] to `"~"`:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::EventHandler;
     /// # struct Handler;
     /// # impl EventHandler for Handler {}
@@ -289,6 +292,7 @@ impl StandardFramework {
     /// a 2 second delay inbetween invocations:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -328,6 +332,7 @@ impl StandardFramework {
     /// # Examples
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -382,60 +387,6 @@ impl StandardFramework {
         self
     }
 
-    /// Same as [`bucket`] but with a check added.
-    ///
-    /// # Examples
-    ///
-    /// ```rust,no_run
-    /// # use serenity::prelude::*;
-    /// # struct Handler;
-    /// #
-    /// # impl EventHandler for Handler {}
-    /// # let mut client = Client::new("token", Handler);
-    /// #
-    /// use serenity::framework::StandardFramework;
-    ///
-    /// client.with_framework(StandardFramework::new()
-    ///     .complex_bucket("basic", 2, 10, 3, |_, channel_id, user_id| {
-    ///         Our bucket is somewhat strict. It can only apply in the specific channel and by the specific user.
-    ///         channel_id == 456 && user_id == 789
-    ///     })
-    ///     .command("ping", |c| c
-    ///         .bucket("basic")
-    ///         .exec(|_, msg, _| {
-    ///             msg.channel_id.say("pong!")?;
-    ///
-    ///             Ok(())
-    ///         })
-    ///     )
-    /// );
-    /// ```
-    ///
-    /// [`bucket`]: #method.bucket
-    /*#[cfg(not(feature = "cache"))]
-    pub fn complex_bucket<Check>(mut self,
-                                    s: &str,
-                                    delay: i64,
-                                    time_span: i64,
-                                    limit: i32,
-                                    check: Check)
-                                    -> Self
-        where Check: Fn(&mut Context, ChannelId, UserId) -> bool + Send + Sync + 'static {
-        self.buckets.insert(
-            s.to_string(),
-            Bucket {
-                ratelimit: Ratelimit {
-                    delay,
-                    limit: Some((time_span, limit)),
-                },
-                users: HashMap::new(),
-                check: Some(Box::new(check)),
-            },
-        );
-
-        self
-    }*/
-
     /// Defines a bucket with only a `delay` between each command.
     ///
     /// # Examples
@@ -443,6 +394,7 @@ impl StandardFramework {
     /// Create and use a simple bucket that has a 2 second delay between invocations:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -717,6 +669,7 @@ impl StandardFramework {
     /// # Examples
     ///
     /// ```rust,ignore
+    /// extern crate serenity;
     /// framework.command("ping", |c| c
     ///     .desc("Responds with 'pong'.")
     ///     .exec(|ctx, _, _| {
@@ -775,6 +728,7 @@ impl StandardFramework {
     /// Creating a simple group:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -808,6 +762,7 @@ impl StandardFramework {
     /// Making a simple argument error responder:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -849,6 +804,7 @@ impl StandardFramework {
     /// Using `before` to log command usage:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -867,6 +823,7 @@ impl StandardFramework {
     /// Using before to prevent command usage:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -905,6 +862,7 @@ impl StandardFramework {
     /// Using `after` to log command usage:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #
@@ -935,6 +893,7 @@ impl StandardFramework {
     /// Using `unrecognised_command`:
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::*;
     /// # struct Handler;
     /// #

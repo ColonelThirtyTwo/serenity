@@ -68,6 +68,7 @@ impl CreateCommand {
     /// is the owner.
     ///
     /// ```rust,no_run
+    /// extern crate serenity;
     /// # use serenity::prelude::EventHandler;
     /// # struct Handler;
     /// # impl EventHandler for Handler {}

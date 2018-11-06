@@ -28,6 +28,7 @@ use std::sync::Arc;
 /// to call the "name" command.
 ///
 /// ```rust,ignore
+/// extern crate serenity;
 /// framework.group("Information", |g| g
 ///     .prefix("info")
 ///     .command("name", |c| c

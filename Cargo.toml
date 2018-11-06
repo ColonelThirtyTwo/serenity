@@ -17,3 +17,6 @@ threadpool= "~1.7"
 git = "https://github.com/ColonelThirtyTwo/serenity.git"
 branch = "openssl111"
 features = ["framework", "cache", "client", "model"]
+
+[dev-dependencies]
+matches = "0.1.6"
