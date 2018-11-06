@@ -25,7 +25,7 @@
 
 use serenity::client::Context;
 #[cfg(feature = "cache")]
-use framework::standard::{has_correct_roles, has_correct_permissions};
+use super::{has_correct_roles, has_correct_permissions};
 use serenity::model::{
     channel::Message,
     id::ChannelId,
