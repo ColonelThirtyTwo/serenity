@@ -51,9 +51,9 @@ use std::{
 use serenity::framework::Framework;
 use threadpool::ThreadPool;
 
-#[cfg(feature = "cache")]
+//#[cfg(feature = "cache")]
 use serenity::client::CACHE;
-#[cfg(feature = "cache")]
+//#[cfg(feature = "cache")]
 use serenity::model::channel::Channel;
 
 /// A convenience macro for generating a struct fulfilling the [`Command`][command trait] trait.
@@ -355,7 +355,7 @@ impl StandardFramework {
     /// ```
     ///
     /// [`bucket`]: #method.bucket
-    #[cfg(feature = "cache")]
+    //#[cfg(feature = "cache")]
     pub fn complex_bucket<Check>(mut self,
                                     s: &str,
                                     delay: i64,
@@ -412,7 +412,7 @@ impl StandardFramework {
     /// ```
     ///
     /// [`bucket`]: #method.bucket
-    #[cfg(not(feature = "cache"))]
+    /*#[cfg(not(feature = "cache"))]
     pub fn complex_bucket<Check>(mut self,
                                     s: &str,
                                     delay: i64,
@@ -434,7 +434,7 @@ impl StandardFramework {
         );
 
         self
-    }
+    }*/
 
     /// Defines a bucket with only a `delay` between each command.
     ///
@@ -473,7 +473,7 @@ impl StandardFramework {
         self
     }
 
-    #[cfg(feature = "cache")]
+    //#[cfg(feature = "cache")]
     fn is_blocked_guild(&self, message: &Message) -> bool {
         if let Some(Channel::Guild(channel)) = CACHE.read().channel(message.channel_id) {
             let guild_id = channel.with(|g| g.guild_id);
@@ -491,7 +491,7 @@ impl StandardFramework {
         false
     }
 
-    #[cfg(feature = "cache")]
+    //#[cfg(feature = "cache")]
     fn is_blocked_channel(&self, message: &Message) -> bool {
         !self.configuration.allowed_channels.is_empty()
             && !self.configuration
@@ -560,7 +560,7 @@ impl StandardFramework {
                 }
             }
 
-            #[cfg(feature = "cache")]
+            //#[cfg(feature = "cache")]
             {
                 if self.is_blocked_guild(message) {
                     return Some(DispatchError::BlockedGuild);
@@ -598,7 +598,8 @@ impl StandardFramework {
                 Some(DispatchError::CommandDisabled(built.to_string()))
             } else {
 
-                #[cfg(feature = "cache")] {
+                //#[cfg(feature = "cache")]
+                {
                     if !command.allowed_roles.is_empty() {
                         if let Some(guild) = message.guild() {
                             let guild = guild.read();
@@ -1206,7 +1207,7 @@ impl Framework for StandardFramework {
     }
 }
 
-#[cfg(feature = "cache")]
+//#[cfg(feature = "cache")]
 pub fn has_correct_permissions(command: &Arc<CommandOptions>, message: &Message) -> bool {
     if !command.required_permissions.is_empty() {
 

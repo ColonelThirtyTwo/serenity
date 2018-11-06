@@ -17,7 +17,3 @@ threadpool= "~1.7"
 git = "https://github.com/ColonelThirtyTwo/serenity.git"
 branch = "openssl111"
 features = ["framework", "cache", "client", "model"]
-
-[features]
-default = ["cache"]
-cache = []

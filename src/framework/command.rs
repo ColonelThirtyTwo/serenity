@@ -365,7 +365,7 @@ pub fn positions(ctx: &mut Context, msg: &Message, conf: &Configuration) -> Opti
             }
         }
 
-        #[cfg(feature = "cache")]
+        //#[cfg(feature = "cache")]
         {
             let private = match msg.channel() {
                 Some(Channel::Private(_)) => true,

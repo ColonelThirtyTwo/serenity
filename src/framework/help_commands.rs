@@ -24,7 +24,7 @@
 //! [`with_embeds`]: fn.with_embeds.html
 
 use serenity::client::Context;
-#[cfg(feature = "cache")]
+//#[cfg(feature = "cache")]
 use super::{has_correct_roles, has_correct_permissions};
 use serenity::model::{
     channel::Message,
@@ -235,7 +235,7 @@ fn remove_aliases(cmds: &HashMap<String, CommandOrAlias>) -> HashMap<&String, &I
 
 /// Checks whether a user is member of required roles
 /// and given the required permissions.
-#[cfg(feature = "cache")]
+//#[cfg(feature = "cache")]
 pub fn has_all_requirements(cmd: &Arc<CommandOptions>, msg: &Message) -> bool {
     if let Some(guild) = msg.guild() {
         let guild = guild.read();
@@ -260,7 +260,7 @@ pub fn has_all_requirements(cmd: &Arc<CommandOptions>, msg: &Message) -> bool {
 ///
 /// **Note**: A command is visible when it is either normally displayed or
 /// strikethrough upon requested help by a user.
-#[cfg(feature = "cache")]
+//#[cfg(feature = "cache")]
 pub fn is_command_visible(command_options: &Arc<CommandOptions>, msg: &Message, help_options: &HelpOptions) -> bool {
     if !command_options.dm_only && !command_options.guild_only
         || command_options.dm_only && msg.is_private()
@@ -707,7 +707,7 @@ fn send_error_embed(channel_id: ChannelId, input: &str, colour: Colour) -> Resul
 /// client.with_framework(StandardFramework::new()
 ///     .help(help_commands::with_embeds));
 /// ```
-#[cfg(feature = "cache")]
+//#[cfg(feature = "cache")]
 pub fn with_embeds<H: BuildHasher>(
     _: &mut Context,
     msg: &Message,
@@ -816,7 +816,7 @@ fn single_command_to_plain_string(help_options: &HelpOptions, command: &Command)
 /// client.with_framework(StandardFramework::new()
 ///     .help(help_commands::plain));
 /// ```
-#[cfg(feature = "cache")]
+//#[cfg(feature = "cache")]
 pub fn plain<H: BuildHasher>(
     _: &mut Context,
     msg: &Message,
