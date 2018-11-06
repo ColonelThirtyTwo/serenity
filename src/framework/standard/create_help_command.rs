@@ -11,7 +11,7 @@ pub use super::{
     HelpBehaviour
 };
 
-use utils::Colour;
+use serenity::utils::Colour;
 use std::{
     fmt::Write,
     sync::Arc

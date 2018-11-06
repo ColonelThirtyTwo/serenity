@@ -1,7 +1,0 @@
-[package]
-name = "04_message_builder"
-version = "0.1.0"
-authors = ["my name <my@email.address>"]
-
-[dependencies]
-serenity = { path = "../../" }

@@ -1,6 +1,6 @@
-use client::Context;
-use http;
-use model::{
+use serenity::client::Context;
+use serenity::http;
+use serenity::model::{
     channel::Message,
     id::{ChannelId, GuildId, UserId}
 };

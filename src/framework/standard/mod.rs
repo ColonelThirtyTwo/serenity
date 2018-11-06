@@ -31,9 +31,9 @@ pub use self::create_help_command::CreateHelpCommand;
 pub use self::create_command::{CreateCommand, FnOrCommand};
 pub use self::create_group::CreateGroup;
 
-use client::Context;
-use internal::RwLockExt;
-use model::{
+use serenity::client::Context;
+use rwlock_ext::RwLockExt;
+use serenity::model::{
     channel::Message,
     guild::{Guild, Member},
     id::{ChannelId, GuildId, UserId},
@@ -45,13 +45,13 @@ use std::{
     default::Default,
     sync::Arc
 };
-use super::Framework;
+use serenity::framework::Framework;
 use threadpool::ThreadPool;
 
 #[cfg(feature = "cache")]
-use client::CACHE;
+use serenity::client::CACHE;
 #[cfg(feature = "cache")]
-use model::channel::Channel;
+use serenity::model::channel::Channel;
 
 /// A convenience macro for generating a struct fulfilling the [`Command`][command trait] trait.
 ///

@@ -23,14 +23,14 @@
 //! [`plain`]: fn.plain.html
 //! [`with_embeds`]: fn.with_embeds.html
 
-use client::Context;
+use serenity::client::Context;
 #[cfg(feature = "cache")]
 use framework::standard::{has_correct_roles, has_correct_permissions};
-use model::{
+use serenity::model::{
     channel::Message,
     id::ChannelId,
 };
-use Error;
+use serenity::Error;
 use std::{
     borrow::Borrow,
     collections::HashMap,
@@ -49,7 +49,7 @@ use super::{
     CommandError,
     HelpBehaviour,
 };
-use utils::Colour;
+use serenity::utils::Colour;
 
 /// Macro to format a command according to a `HelpBehaviour` or
 /// continue to the next command-name upon hiding.

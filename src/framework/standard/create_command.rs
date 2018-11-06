@@ -7,8 +7,8 @@ pub use super::{
     Check,
 };
 
-use client::Context;
-use model::{
+use serenity::client::Context;
+use serenity::model::{
     channel::Message,
     Permissions
 };

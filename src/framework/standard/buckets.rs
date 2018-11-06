@@ -1,6 +1,6 @@
 use chrono::Utc;
-use client::Context;
-use model::id::{ChannelId, GuildId, UserId};
+use serenity::client::Context;
+use serenity::model::id::{ChannelId, GuildId, UserId};
 use std::{
     collections::HashMap,
     default::Default

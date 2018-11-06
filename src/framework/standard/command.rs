@@ -1,5 +1,5 @@
-use client::Context;
-use model::{
+use serenity::client::Context;
+use serenity::model::{
     channel::{
         Message,
         Channel,
@@ -12,7 +12,7 @@ use std::{
     fmt::{Debug, Formatter},
     sync::Arc
 };
-use utils::Colour;
+use serenity::utils::Colour;
 use super::{Args, Configuration, HelpBehaviour};
 
 type CheckFunction = Fn(&mut Context, &Message, &mut Args, &CommandOptions) -> bool
