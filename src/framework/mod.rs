@@ -451,7 +451,7 @@ impl StandardFramework {
                 .contains(&message.channel_id)
     }
 
-    #[allow(too_many_arguments)]
+    //#[allow(too_many_arguments)]
     #[cfg_attr(feature = "cargo-clippy", allow(cyclomatic_complexity))]
     fn should_fail(&mut self,
                    mut context: &mut Context,
