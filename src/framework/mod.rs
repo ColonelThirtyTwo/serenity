@@ -103,12 +103,12 @@ macro_rules! command {
         #[allow(non_camel_case_types)]
         pub struct $fname;
 
-        impl $crate::framework::standard::Command for $fname {
+        impl $crate::framework::Command for $fname {
             #[allow(unreachable_code, unused_mut)]
-            fn execute(&self, mut $c: &mut $crate::client::Context,
-                      _: &$crate::model::channel::Message,
-                      _: $crate::framework::standard::Args)
-                      -> ::std::result::Result<(), $crate::framework::standard::CommandError> {
+            fn execute(&self, mut $c: &mut ::serenity::client::Context,
+                      _: &::serenity::model::channel::Message,
+                      _: $crate::framework::Args)
+                      -> ::std::result::Result<(), $crate::framework::CommandError> {
 
                 $b
 
@@ -120,12 +120,12 @@ macro_rules! command {
         #[allow(non_camel_case_types)]
         pub struct $fname;
 
-        impl $crate::framework::standard::Command for $fname {
+        impl $crate::framework::Command for $fname {
             #[allow(unreachable_code, unused_mut)]
-            fn execute(&self, mut $c: &mut $crate::client::Context,
-                      $m: &$crate::model::channel::Message,
-                      _: $crate::framework::standard::Args)
-                      -> ::std::result::Result<(), $crate::framework::standard::CommandError> {
+            fn execute(&self, mut $c: &mut ::serenity::client::Context,
+                      $m: &::serenity::model::channel::Message,
+                      _: $crate::framework::Args)
+                      -> ::std::result::Result<(), $crate::framework::CommandError> {
 
                 $b
 
@@ -137,12 +137,12 @@ macro_rules! command {
         #[allow(non_camel_case_types)]
         pub struct $fname;
 
-        impl $crate::framework::standard::Command for $fname {
+        impl $crate::framework::Command for $fname {
             #[allow(unreachable_code, unused_mut)]
-            fn execute(&self, mut $c: &mut $crate::client::Context,
-                      $m: &$crate::model::channel::Message,
-                      mut $a: $crate::framework::standard::Args)
-                      -> ::std::result::Result<(), $crate::framework::standard::CommandError> {
+            fn execute(&self, mut $c: &mut ::serenity::client::Context,
+                      $m: &::serenity::model::channel::Message,
+                      mut $a: $crate::framework::Args)
+                      -> ::std::result::Result<(), $crate::framework::CommandError> {
 
                 $b
 
@@ -451,7 +451,7 @@ impl StandardFramework {
                 .contains(&message.channel_id)
     }
 
-    #[allow(too_many_arguments)]
+    //#[allow(too_many_arguments)]
     #[cfg_attr(feature = "cargo-clippy", allow(cyclomatic_complexity))]
     fn should_fail(&mut self,
                    mut context: &mut Context,
